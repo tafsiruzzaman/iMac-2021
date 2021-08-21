@@ -43,15 +43,13 @@ document.getElementById('fast-delivery').addEventListener('click', function () {
 
 // promo code
 document.getElementById('promo-apply-btn').addEventListener('click', function () {
-    const total = document.getElementById('total');
-    const totalAmount = parseFloat(total.innerText);
+    const totalPrice = document.getElementById('total-price');
+    const totalAmount = parseFloat(totalPrice.innerText);
     const promoCode = 'stevekaku';
     const usedCode = document.getElementById('promo-input').value;
     if (usedCode == promoCode) {
         const discountPrice = totalAmount - (totalAmount * (20 / 100));
         total.innerText = discountPrice;
-        document.getElementById('promo-apply-btn').setAttribute('disabled', true);
-        
     }
     document.getElementById('promo-input').value = '';
 });
